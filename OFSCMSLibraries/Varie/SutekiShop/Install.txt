@@ -1,0 +1,39 @@
+Installing Suteki Shop
+----------------------
+
+Pre-requisites:
+1. .NET 4.0
+2. MVC 2.0
+3. SQL Server 8
+4. IIS 7+
+
+INPUT_DIR refers to the WebApplication directory supplied along with this file.
+TARGET_DIR refers to the directory the application will live in on your server.
+DB_CREATOR refers to the DbCreator directory supplied along with this file.
+
+This document assumes that you have at least basic knowledge about managing a Windows Server
+machine and IIS (Internet Information Services).
+
+ 1. Create TARGET_DIR if it does not already exist; be sure that the directory is empty.
+
+ 2. Copy all the files from INPUT_DIR into TARGET_DIR.
+
+ 3. If you have a local SQL Server database which you have administration rights to, you can skip this step. 
+    Otherwise:
+  - Change the SutekiShop connection string in the Web.config file in TARGET_DIR and the 
+    Suteki.Shop.CreateDb.exe.config file in the DB_CREATOR directory for your database.
+    Remember that the web.config connection string will need to have datareader and datawriter rights on your
+    SQL Server instance.
+
+ 4. Run the Suteki.Shop.CreateDb.exe executable in the DB_CREATOR directory. This will create the SutekiShop database.
+
+ 5. Set the permissions of the TARGET_DIR directory so that the ASP.NET Worker Process has read and modify 
+    permissions on it (usually, the ASP.NET Worker Process runs as "NETWORK SERVICE" or "ASPNET", 
+    depending on the Operating System version).
+
+ 6. Setup a Web Site or Application in IIS, setting the root directory to TARGET_DIRECTORY.
+
+ 7. Navigate to the Web Site or Application using a web browser and verify that everything works properly.
+
+ 8. Login using "admin@sutekishop.co.uk" and password "admin" to create categories and products. 
+    Note, you should change this password before putting your shop into production.

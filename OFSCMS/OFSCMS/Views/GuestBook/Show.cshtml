@@ -1,0 +1,144 @@
+﻿@{
+    ViewBag.Title = "Show";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Libro degli ospiti</h2>
+@using OFSCore.Extension
+
+@model List<DataClasses.DataModel.Generic.IOFSObject>
+           @using DataClasses.DataModel.News;
+<script type="text/javascript">
+    var totalEvt = 1;
+$(document).ready(function(){
+    var signDiv = $('#SignGuestbookContainer');
+    signDiv.hide();
+
+    $('#btnSign').click(function () {
+
+        signDiv.show();
+    });
+    AjaxNews(0);
+});
+
+
+    @{
+        OFSCore.Base.ControllerBase controller =(OFSCore.Base.ControllerBase)HttpContext.Current.Session["controllerInstance"];
+        int pageSize = controller.PageSize;
+
+        var totalEvt = 1;
+        }
+
+    function setTotal() {
+        $("#loading").show();
+        $.ajax({
+            url: '/GuestBook/GetNumberOfPosts',
+            type: 'GET',
+            cache: false,
+            context: null,
+            complete: function () {
+                $("#loading").hide();
+            },
+            success: function (totalEvtF) {
+                totalEvt = totalEvtF;
+            },
+            error: function () { alert("error"); },
+            always: function () {
+                $("#loading").hide();
+            }
+        });
+    }
+  
+    function AjaxNews(currPage) {
+
+        setTotal();
+    var table = $('#signContainer');
+    var pager = $('#pager');
+    var newsPerPage = 10;
+    $("#loading").show();
+    $.ajax({
+        //url: '@Url.Action("Show", "GuestBook", new {page = 0 })',
+        url: '/GuestBook/ShowAjax?page=' + currPage,
+        type: 'GET',
+        cache: false,
+        context: table,
+        complete: function () {
+            $("#loading").hide();
+        },
+        success: function (news) {
+            table.hide(1000);
+            table.empty();
+            $.each(news, function (index, info) {
+                var nick = info.Nick;
+                if (!info.IsAapproved)
+                    nick = nick +  ' (Commento in fase di approvazione)';
+                $('<div/>', {
+                    html: $('<h4/>', {
+                        html: nick
+                    })
+                        .after($('<i>', {
+                        html: info.Title
+                        }))
+                        .after($('<p>', {
+                        html: info.Message.replace('\n','<br/>')
+                    }))
+                })
+                    .appendTo(table);
+                
+                table.show(1000);
+            });
+            pager.empty();
+            if (totalEvt / newsPerPage > 1) {
+                for (i = 0; i <= (totalEvt / newsPerPage) ; i++) {
+                    $('<a/>',
+                        {
+                            onclick: 'AjaxNews(' + i + ');',
+                            title: i,
+                            html: function () {
+                                if (i == 0) return i + 1
+                                else return '&nbsp;-&nbsp;' + (i + 1)
+                            },
+                            href: '#!' + (i + 1)
+                        }).appendTo(pager);
+                }
+            }
+        },
+        error: function (jqXHR, exception) {
+            if (jqXHR.status === 0) {
+                alert('Not connect.\n Verify Network.');
+            } else if (jqXHR.status == 404) {
+                alert('Requested page not found. [404]');
+            } else if (jqXHR.status == 500) {
+                alert('Internal Server Error [500].\r\n');
+                table.innerHTML = jqXHR.responseText;
+            } else if (exception === 'parsererror') {
+                alert('Requested JSON parse failed.');
+            } else if (exception === 'timeout') {
+                alert('Time out error.');
+            } else if (exception === 'abort') {
+                alert('Ajax request aborted.');
+            } else {
+                alert('Uncaught Error.\n' + jqXHR.responseText);
+            }
+        }
+    });
+}
+</script>
+
+
+<div id="loading" style="top:300px; left:200px;"><img id="ImgWait" src="../../Graphics/wait.gif"/></div>
+<div id="signCommand">
+       <p id="btnSign">Firma</p>
+</div>
+<div id="signContainer">
+       
+</div>
+
+<div id="pager">
+       
+</div>
+
+<div id="SignGuestbookContainer">
+       @Html.Action("Sign", "GuestBook")
+</div>
+

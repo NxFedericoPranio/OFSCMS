@@ -1,0 +1,13 @@
+﻿@model List<DataClasses.DataModel.Generic.IOFSObject>
+    @using OFSCore.Extension
+
+<select id="ComboPages">
+    @foreach (DataClasses.DataModel.Pages.OFSPage page in Model)
+    {
+        <option value="@page.Id">@page.Title</option>
+    }
+</select>
+
+<script type="text/javascript">
+    $("#ComboPages").val('@ViewBag.selectedPage');
+</script>

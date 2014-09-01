@@ -1,0 +1,2 @@
+07/09/2013 19.29.32 - There is an error in XML document (18, 196).
+07/09/2013 19.29.32 - Reference to undeclared entity 'egrave'. Line 18, position 196.

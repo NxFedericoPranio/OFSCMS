@@ -1,0 +1,1107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C7B67BF1-B7D0-414B-80C2-509BAF556B34}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OFSCMS</RootNamespace>
+    <AssemblyName>OFSCMS</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AngularJs.MVC">
+      <HintPath>..\packages\AngularJs.MVC.1.0.0\lib\net40\AngularJs.MVC.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <HintPath>..\packages\WebGrease.1.3.0\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentValidation">
+      <HintPath>..\packages\FluentValidation.4.0.0.1\lib\Net40\FluentValidation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap">
+      <HintPath>..\packages\structuremap.2.6.4.1\lib\net40\StructureMap.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Mvc.FixedDisplayModes, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.FixedDisplayModes.1.0.0\lib\net40\Microsoft.Web.Mvc.FixedDisplayModes.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20715.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebGrease">
+      <HintPath>..\packages\WebGrease.1.3.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\AdminSideMenuController.cs" />
+    <Compile Include="Areas\Admin\Controllers\CalendarController.cs" />
+    <Compile Include="Areas\Admin\Controllers\GuestBookAdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\MenuesController.cs" />
+    <Compile Include="Areas\Admin\Controllers\NewsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\PagesController.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BlogClientController.cs" />
+    <Compile Include="Controllers\CalendarClientController.cs" />
+    <Compile Include="Controllers\GuestBookController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MailToUsController.cs" />
+    <Compile Include="Controllers\NewsClientController.cs" />
+    <Compile Include="Controllers\OrdersController.cs" />
+    <Compile Include="Controllers\PhotoController.cs" />
+    <Compile Include="Controllers\SideMenuController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Content Include="Scripts\Controllers\photoAlbumModule.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="App_Data\ASPNetDB.mdb" />
+    <Content Include="App_Data\Log\20130907192932.txt" />
+    <Content Include="App_Data\Log\20130911234639.txt" />
+    <Content Include="App_Data\Log\20130914200506.txt" />
+    <Content Include="App_Data\Menues\00000001it-it.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Data\Menues\Admin\00000001it-it.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Data\News\00000001it-IT.xml" />
+    <Content Include="App_Data\Orders\00000001.xml" />
+    <Content Include="App_Data\Pages\00000001it-IT.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Data\Pages\00000014it-IT.xml" />
+    <Content Include="App_Data\Pages\00000016it-IT.xml" />
+    <Content Include="App_Data\Pages\00000100it-IT.xml" />
+    <Content Include="App_Data\Pages\00000101it-IT.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Data\Pages\00000102it-IT.xml" />
+    <Content Include="App_Data\Pages\00000103it-IT.xml" />
+    <Content Include="App_Data\Pages\00000111it-IT.xml" />
+    <Content Include="App_Data\TxtDocs\privacy.txt" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\CHANGES.html" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\CKEditor.NET.sln" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\CKEditor.NETwithSamples.sln" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\INSTALL.html" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\LICENSE.html" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\AttachEvents.aspx" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\bin\CKEditor.NET.dll" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\bin\CKEditor.NET.pdb" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\adapters\jquery.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\CHANGES.html" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\ckeditor.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\ckeditor_basic.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\config.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\contents.css" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\Copy of contents.css" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\images\spacer.gif" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\INSTALL.html" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\lang\af.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\lang\ar.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\lang\bg.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\lang\bn.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\lang\bs.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\lang\ca.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\lang\cs.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\lang\cy.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\lang\da.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\lang\de.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\lang\el.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\lang\en-au.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\lang\en-ca.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\lang\en-gb.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\lang\en.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\lang\eo.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\lang\es.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\lang\et.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\lang\eu.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\lang\fa.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\lang\fi.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\lang\fo.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\lang\fr-ca.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\lang\fr.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\lang\gl.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\lang\gu.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\lang\he.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\lang\hi.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\lang\hr.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\lang\hu.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\lang\id.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\lang\is.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\lang\it.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\lang\ja.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\lang\ka.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\lang\km.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\lang\ko.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\lang\lt.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\lang\lv.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\lang\mk.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\lang\mn.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\lang\ms.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\lang\nb.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\lang\nl.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\lang\no.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\lang\pl.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\lang\pt-br.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\lang\pt.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\lang\ro.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\lang\ru.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\lang\sk.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\lang\sl.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\lang\sr-latn.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\lang\sr.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\lang\sv.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\lang\th.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\lang\tr.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\lang\ug.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\lang\uk.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\lang\vi.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\lang\zh-cn.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\lang\zh.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\lang\_languages.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\lang\_translationstatus.txt" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\LICENSE.html" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\a11yhelp\dialogs\a11yhelp.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\a11yhelp\lang\cs.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\a11yhelp\lang\cy.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\a11yhelp\lang\da.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\a11yhelp\lang\de.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\a11yhelp\lang\el.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\a11yhelp\lang\en.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\a11yhelp\lang\eo.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\a11yhelp\lang\fa.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\a11yhelp\lang\fi.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\a11yhelp\lang\fr.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\a11yhelp\lang\gu.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\a11yhelp\lang\he.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\a11yhelp\lang\it.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\a11yhelp\lang\mk.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\a11yhelp\lang\nb.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\a11yhelp\lang\nl.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\a11yhelp\lang\no.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\a11yhelp\lang\pt-br.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\a11yhelp\lang\ro.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\a11yhelp\lang\tr.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\a11yhelp\lang\ug.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\a11yhelp\lang\vi.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\a11yhelp\lang\zh-cn.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\a11yhelp\lang\_translationstatus.txt" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\about\dialogs\about.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\about\dialogs\logo_ckeditor.png" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\adobeair\plugin.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\ajax\plugin.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\autogrow\plugin.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\bbcode\plugin.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\clipboard\dialogs\paste.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\colordialog\dialogs\colordialog.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\devtools\lang\bg.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\devtools\lang\cs.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\devtools\lang\cy.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\devtools\lang\da.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\devtools\lang\de.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\devtools\lang\el.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\devtools\lang\en.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\devtools\lang\eo.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\devtools\lang\et.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\devtools\lang\fa.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\devtools\lang\fi.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\devtools\lang\fr.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\devtools\lang\gu.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\devtools\lang\he.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\devtools\lang\hr.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\devtools\lang\it.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\devtools\lang\nb.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\devtools\lang\nl.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\devtools\lang\no.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\devtools\lang\pl.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\devtools\lang\pt-br.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\devtools\lang\tr.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\devtools\lang\ug.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\devtools\lang\uk.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\devtools\lang\vi.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\devtools\lang\zh-cn.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\devtools\lang\_translationstatus.txt" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\devtools\plugin.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\dialog\dialogDefinition.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\div\dialogs\div.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\docprops\dialogs\docprops.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\docprops\plugin.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\find\dialogs\find.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\flash\dialogs\flash.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\flash\images\placeholder.png" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\forms\dialogs\button.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\forms\dialogs\checkbox.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\forms\dialogs\form.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\forms\dialogs\hiddenfield.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\forms\dialogs\radio.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\forms\dialogs\select.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\forms\dialogs\textarea.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\forms\dialogs\textfield.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\forms\images\hiddenfield.gif" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\iframedialog\plugin.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\iframe\dialogs\iframe.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\iframe\images\placeholder.png" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\image\dialogs\image.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\link\dialogs\anchor.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\link\dialogs\link.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\link\images\anchor.gif" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\liststyle\dialogs\liststyle.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\pagebreak\images\pagebreak.gif" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\pastefromword\filter\default.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\pastetext\dialogs\pastetext.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\placeholder\dialogs\placeholder.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\placeholder\lang\bg.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\placeholder\lang\cs.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\placeholder\lang\cy.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\placeholder\lang\da.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\placeholder\lang\de.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\placeholder\lang\el.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\placeholder\lang\en.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\placeholder\lang\eo.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\placeholder\lang\et.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\placeholder\lang\fa.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\placeholder\lang\fi.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\placeholder\lang\fr.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\placeholder\lang\he.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\placeholder\lang\hr.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\placeholder\lang\it.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\placeholder\lang\nb.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\placeholder\lang\nl.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\placeholder\lang\no.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\placeholder\lang\pl.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\placeholder\lang\pt-br.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\placeholder\lang\tr.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\placeholder\lang\ug.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\placeholder\lang\uk.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\placeholder\lang\vi.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\placeholder\lang\zh-cn.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\placeholder\lang\_translationstatus.txt" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\placeholder\placeholder.gif" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\placeholder\plugin.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\preview\preview.html" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\scayt\dialogs\options.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\scayt\dialogs\toolbar.css" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\showblocks\images\block_address.png" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\showblocks\images\block_blockquote.png" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\showblocks\images\block_div.png" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\showblocks\images\block_h1.png" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\showblocks\images\block_h2.png" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\showblocks\images\block_h3.png" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\showblocks\images\block_h4.png" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\showblocks\images\block_h5.png" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\showblocks\images\block_h6.png" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\showblocks\images\block_p.png" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\showblocks\images\block_pre.png" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\smiley\dialogs\smiley.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\smiley\images\angel_smile.gif" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\smiley\images\angry_smile.gif" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\smiley\images\broken_heart.gif" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\smiley\images\confused_smile.gif" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\smiley\images\cry_smile.gif" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\smiley\images\devil_smile.gif" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\smiley\images\embaressed_smile.gif" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\smiley\images\envelope.gif" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\smiley\images\heart.gif" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\smiley\images\kiss.gif" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\smiley\images\lightbulb.gif" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\smiley\images\omg_smile.gif" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\smiley\images\regular_smile.gif" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\smiley\images\sad_smile.gif" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\smiley\images\shades_smile.gif" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\smiley\images\teeth_smile.gif" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\smiley\images\thumbs_down.gif" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\smiley\images\thumbs_up.gif" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\smiley\images\tounge_smile.gif" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\smiley\images\whatchutalkingabout_smile.gif" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\smiley\images\wink_smile.gif" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\specialchar\dialogs\specialchar.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\specialchar\lang\cs.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\specialchar\lang\cy.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\specialchar\lang\de.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\specialchar\lang\el.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\specialchar\lang\en.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\specialchar\lang\eo.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\specialchar\lang\et.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\specialchar\lang\fa.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\specialchar\lang\fi.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\specialchar\lang\fr.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\specialchar\lang\he.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\specialchar\lang\hr.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\specialchar\lang\it.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\specialchar\lang\nb.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\specialchar\lang\nl.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\specialchar\lang\no.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\specialchar\lang\pt-br.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\specialchar\lang\tr.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\specialchar\lang\ug.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\specialchar\lang\zh-cn.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\specialchar\lang\_translationstatus.txt" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\stylesheetparser\plugin.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\styles\styles\default.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\tableresize\plugin.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\tabletools\dialogs\tableCell.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\table\dialogs\table.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\templates\dialogs\templates.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\templates\templates\default.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\templates\templates\images\template1.gif" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\templates\templates\images\template2.gif" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\templates\templates\images\template3.gif" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\uicolor\dialogs\uicolor.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\uicolor\lang\bg.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\uicolor\lang\cs.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\uicolor\lang\cy.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\uicolor\lang\da.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\uicolor\lang\de.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\uicolor\lang\el.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\uicolor\lang\en.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\uicolor\lang\eo.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\uicolor\lang\et.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\uicolor\lang\fa.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\uicolor\lang\fi.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\uicolor\lang\fr.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\uicolor\lang\he.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\uicolor\lang\hr.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\uicolor\lang\it.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\uicolor\lang\mk.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\uicolor\lang\nb.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\uicolor\lang\nl.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\uicolor\lang\no.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\uicolor\lang\pl.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\uicolor\lang\pt-br.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\uicolor\lang\tr.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\uicolor\lang\ug.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\uicolor\lang\uk.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\uicolor\lang\vi.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\uicolor\lang\zh-cn.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\uicolor\lang\_translationstatus.txt" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\uicolor\plugin.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\uicolor\uicolor.gif" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\uicolor\yui\assets\hue_bg.png" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\uicolor\yui\assets\hue_thumb.png" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\uicolor\yui\assets\picker_mask.png" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\uicolor\yui\assets\picker_thumb.png" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\uicolor\yui\assets\yui.css" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\uicolor\yui\yui.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\wsc\dialogs\ciframe.html" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\wsc\dialogs\tmpFrameset.html" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\wsc\dialogs\wsc.css" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\wsc\dialogs\wsc.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\plugins\xml\plugin.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\skins\kama\dialog.css" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\skins\kama\editor.css" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\skins\kama\icons.png" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\skins\kama\icons_rtl.png" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\skins\kama\images\dialog_sides.gif" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\skins\kama\images\dialog_sides.png" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\skins\kama\images\dialog_sides_rtl.png" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\skins\kama\images\mini.gif" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\skins\kama\images\noimage.png" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\skins\kama\images\sprites.png" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\skins\kama\images\sprites_ie6.png" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\skins\kama\images\toolbar_start.gif" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\skins\kama\skin.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\skins\kama\templates.css" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\skins\office2003\dialog.css" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\skins\office2003\editor.css" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\skins\office2003\icons.png" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\skins\office2003\icons_rtl.png" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\skins\office2003\images\dialog_sides.gif" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\skins\office2003\images\dialog_sides.png" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\skins\office2003\images\dialog_sides_rtl.png" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\skins\office2003\images\mini.gif" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\skins\office2003\images\noimage.png" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\skins\office2003\images\sprites.png" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\skins\office2003\images\sprites_ie6.png" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\skins\office2003\skin.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\skins\office2003\templates.css" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\skins\v2\dialog.css" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\skins\v2\editor.css" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\skins\v2\icons.png" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\skins\v2\icons_rtl.png" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\skins\v2\images\dialog_sides.gif" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\skins\v2\images\dialog_sides.png" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\skins\v2\images\dialog_sides_rtl.png" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\skins\v2\images\mini.gif" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\skins\v2\images\noimage.png" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\skins\v2\images\sprites.png" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\skins\v2\images\sprites_ie6.png" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\skins\v2\images\toolbar_start.gif" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\skins\v2\skin.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\skins\v2\templates.css" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\themes\default\theme.js" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\Default.aspx" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\FirstUse.aspx" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\sample.css" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\SampleConfig.aspx" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\SharedSpaces.aspx" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\SubmitData.aspx" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ToolbarDefine.aspx" />
+    <Content Include="Areas\Admin\Content\AdminStyle.css" />
+    <Content Include="Areas\Admin\Graphics\arrowdx.gif" />
+    <Content Include="Areas\Admin\Graphics\arrowsx.gif" />
+    <Content Include="Areas\Admin\Graphics\logoHome01.gif" />
+    <Content Include="Areas\Admin\Graphics\MenuArrow.gif" />
+    <Content Include="Areas\Admin\Graphics\TopDx.gif" />
+    <Content Include="Areas\Admin\Graphics\TopSx.gif" />
+    <Content Include="Areas\Admin\Graphics\wait.gif" />
+    <Content Include="Content\AdminStyle.css" />
+    <Content Include="Content\Animation.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\themes\base\images\animated-overlay.gif" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui-1.8.23.custom.css" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.menu.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.spinner.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\jquery.ui.tooltip.css" />
+    <Content Include="Content\themes\base\minified\images\animated-overlay.gif" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.menu.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.spinner.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tooltip.min.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Areas\Admin\Views\Web.config" />
+    <Content Include="Public\Gallery\Trekking2014\Foto0423.jpg" />
+    <Content Include="Public\Gallery\Trekking2014\Foto0424.jpg" />
+    <Content Include="Public\Gallery\Trekking2014\Foto0429.jpg" />
+    <Content Include="Public\Gallery\Trekking2014\Foto0430.jpg" />
+    <Content Include="Public\Gallery\Trekking2014\Foto0432.jpg" />
+    <Content Include="Public\Gallery\Trekking2014\Foto0436.jpg" />
+    <Content Include="Public\Gallery\Trekking2014\Foto0438.jpg" />
+    <Content Include="Public\Gallery\Trekking2014\Foto0452.jpg" />
+    <Content Include="Public\Gallery\Trekking2014\Foto0453.jpg" />
+    <Content Include="Public\Gallery\Trekking2014\Foto0466.jpg" />
+    <Content Include="Public\Gallery\Trekking2014\Foto0468.jpg" />
+    <Content Include="Public\Gallery\Trekking2014\Foto0476.jpg" />
+    <Content Include="Public\Gallery\Trekking2014\Foto0482.jpg" />
+    <Content Include="Public\Gallery\Trekking2014\Foto0484.jpg" />
+    <Content Include="Public\Gallery\Trekking2014\Foto0486.jpg" />
+    <Content Include="Public\Gallery\Trekking2014\Foto0494.jpg" />
+    <Content Include="Public\Gallery\Trekking2014\Foto0495.jpg" />
+    <Content Include="Public\Gallery\Trekking2014\Foto0498.jpg" />
+    <Content Include="Public\Gallery\Trekking2014\Foto0509.jpg" />
+    <Content Include="Public\Gallery\Trekking2014\Foto0510.jpg" />
+    <Content Include="Public\Gallery\Trekking2014\Foto0511.jpg" />
+    <Content Include="Public\Gallery\Trekking2014\Foto0513.jpg" />
+    <Content Include="Public\Gallery\Trekking2014\Foto0519.jpg" />
+    <Content Include="Public\Gallery\Trekking2014\Foto0522.jpg" />
+    <Content Include="Public\web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Data\web.config" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\ckeditor\.htaccess" />
+    <Content Include="Areas\Admin\Components\ckeditor3.6.4\_Samples\web.config" />
+    <Content Include="Areas\Admin\Views\AdminSideMenu\show.cshtml" />
+    <Content Include="Areas\Admin\Views\Calendar\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Calendar\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Calendar\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Calendar\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\News\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\News\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\News\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\News\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Pages\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Pages\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Pages\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Pages\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Admin\Views\GuestBookAdmin\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\GuestBookAdmin\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\GuestBookAdmin\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\GuestBookAdmin\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Menues\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Menues\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Menues\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Menues\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Menues\ComboMenu.cshtml" />
+    <Content Include="Areas\Admin\Views\Pages\ComboPages.cshtml" />
+    <Content Include="Scripts\angular-animate.js" />
+    <Content Include="Scripts\angular-animate.min.js" />
+    <Content Include="Scripts\angular-cookies.js" />
+    <Content Include="Scripts\angular-cookies.min.js" />
+    <Content Include="Scripts\angular-csp.css" />
+    <Content Include="Scripts\angular-loader.js" />
+    <Content Include="Scripts\angular-loader.min.js" />
+    <Content Include="Scripts\angular-resource.js" />
+    <Content Include="Scripts\angular-resource.min.js" />
+    <Content Include="Scripts\angular-route.js" />
+    <Content Include="Scripts\angular-route.min.js" />
+    <Content Include="Scripts\angular-sanitize.js" />
+    <Content Include="Scripts\angular-sanitize.min.js" />
+    <Content Include="Scripts\angular-scenario.js" />
+    <Content Include="Scripts\angular-touch.js" />
+    <Content Include="Scripts\angular-touch.min.js" />
+    <Content Include="Scripts\angular-ui\ui-utils-ieshiv.js" />
+    <Content Include="Scripts\angular-ui\ui-utils-ieshiv.min.js" />
+    <Content Include="Scripts\angular-ui\ui-utils.js" />
+    <Content Include="Scripts\angular-ui\ui-utils.min.js" />
+    <Content Include="Scripts\angular.bundled.min.js" />
+    <Content Include="Scripts\angular.js" />
+    <Content Include="Scripts\angular.min.js" />
+    <Content Include="Scripts\angular.min.js.map" />
+    <Content Include="Scripts\angular-animate.min.js.map" />
+    <Content Include="Scripts\angular-resource.min.js.map" />
+    <Content Include="Scripts\angular-touch.min.js.map" />
+    <Content Include="Scripts\angular-sanitize.min.js.map" />
+    <Content Include="Scripts\angular-route.min.js.map" />
+    <Content Include="Scripts\angular-loader.min.js.map" />
+    <Content Include="Scripts\angular-cookies.min.js.map" />
+    <Content Include="Scripts\Controllers\configurations.js" />
+    <Content Include="Scripts\Controllers\ofs.controllers.js" />
+    <Content Include="Scripts\errors.json" />
+    <None Include="Properties\PublishProfiles\sandro.pubxml" />
+    <None Include="Scripts\jquery-2.0.3.intellisense.js" />
+    <Content Include="Graphics\arrowdx.gif" />
+    <Content Include="Graphics\arrowsx.gif" />
+    <Content Include="Graphics\left.gif" />
+    <Content Include="Graphics\MenuArrow.gif" />
+    <Content Include="Graphics\TopDx.gif" />
+    <Content Include="Graphics\TopSx.gif" />
+    <Content Include="Graphics\wait.gif" />
+    <Content Include="Scripts\angular-mocks.js" />
+    <Content Include="Scripts\i18n\angular-locale_af-na.js" />
+    <Content Include="Scripts\i18n\angular-locale_af-za.js" />
+    <Content Include="Scripts\i18n\angular-locale_af.js" />
+    <Content Include="Scripts\i18n\angular-locale_am-et.js" />
+    <Content Include="Scripts\i18n\angular-locale_am.js" />
+    <Content Include="Scripts\i18n\angular-locale_ar-001.js" />
+    <Content Include="Scripts\i18n\angular-locale_ar-ae.js" />
+    <Content Include="Scripts\i18n\angular-locale_ar-bh.js" />
+    <Content Include="Scripts\i18n\angular-locale_ar-dz.js" />
+    <Content Include="Scripts\i18n\angular-locale_ar-eg.js" />
+    <Content Include="Scripts\i18n\angular-locale_ar-iq.js" />
+    <Content Include="Scripts\i18n\angular-locale_ar-jo.js" />
+    <Content Include="Scripts\i18n\angular-locale_ar-kw.js" />
+    <Content Include="Scripts\i18n\angular-locale_ar-lb.js" />
+    <Content Include="Scripts\i18n\angular-locale_ar-ly.js" />
+    <Content Include="Scripts\i18n\angular-locale_ar-ma.js" />
+    <Content Include="Scripts\i18n\angular-locale_ar-om.js" />
+    <Content Include="Scripts\i18n\angular-locale_ar-qa.js" />
+    <Content Include="Scripts\i18n\angular-locale_ar-sa.js" />
+    <Content Include="Scripts\i18n\angular-locale_ar-sd.js" />
+    <Content Include="Scripts\i18n\angular-locale_ar-sy.js" />
+    <Content Include="Scripts\i18n\angular-locale_ar-tn.js" />
+    <Content Include="Scripts\i18n\angular-locale_ar-ye.js" />
+    <Content Include="Scripts\i18n\angular-locale_ar.js" />
+    <Content Include="Scripts\i18n\angular-locale_bg-bg.js" />
+    <Content Include="Scripts\i18n\angular-locale_bg.js" />
+    <Content Include="Scripts\i18n\angular-locale_bn-bd.js" />
+    <Content Include="Scripts\i18n\angular-locale_bn-in.js" />
+    <Content Include="Scripts\i18n\angular-locale_bn.js" />
+    <Content Include="Scripts\i18n\angular-locale_ca-ad.js" />
+    <Content Include="Scripts\i18n\angular-locale_ca-es.js" />
+    <Content Include="Scripts\i18n\angular-locale_ca.js" />
+    <Content Include="Scripts\i18n\angular-locale_cs-cz.js" />
+    <Content Include="Scripts\i18n\angular-locale_cs.js" />
+    <Content Include="Scripts\i18n\angular-locale_da-dk.js" />
+    <Content Include="Scripts\i18n\angular-locale_da.js" />
+    <Content Include="Scripts\i18n\angular-locale_de-at.js" />
+    <Content Include="Scripts\i18n\angular-locale_de-be.js" />
+    <Content Include="Scripts\i18n\angular-locale_de-ch.js" />
+    <Content Include="Scripts\i18n\angular-locale_de-de.js" />
+    <Content Include="Scripts\i18n\angular-locale_de-li.js" />
+    <Content Include="Scripts\i18n\angular-locale_de-lu.js" />
+    <Content Include="Scripts\i18n\angular-locale_de.js" />
+    <Content Include="Scripts\i18n\angular-locale_el-cy.js" />
+    <Content Include="Scripts\i18n\angular-locale_el-gr.js" />
+    <Content Include="Scripts\i18n\angular-locale_el.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-as.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-au.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-bb.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-be.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-bm.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-bw.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-bz.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-ca.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-dsrt-us.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-dsrt.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-fm.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-gb.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-gu.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-gy.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-hk.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-ie.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-in.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-iso.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-jm.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-mh.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-mp.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-mt.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-mu.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-na.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-nz.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-ph.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-pk.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-pr.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-pw.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-sg.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-tc.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-tt.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-um.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-us.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-vg.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-vi.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-za.js" />
+    <Content Include="Scripts\i18n\angular-locale_en-zw.js" />
+    <Content Include="Scripts\i18n\angular-locale_en.js" />
+    <Content Include="Scripts\i18n\angular-locale_es-419.js" />
+    <Content Include="Scripts\i18n\angular-locale_es-ar.js" />
+    <Content Include="Scripts\i18n\angular-locale_es-bo.js" />
+    <Content Include="Scripts\i18n\angular-locale_es-cl.js" />
+    <Content Include="Scripts\i18n\angular-locale_es-co.js" />
+    <Content Include="Scripts\i18n\angular-locale_es-cr.js" />
+    <Content Include="Scripts\i18n\angular-locale_es-do.js" />
+    <Content Include="Scripts\i18n\angular-locale_es-ea.js" />
+    <Content Include="Scripts\i18n\angular-locale_es-ec.js" />
+    <Content Include="Scripts\i18n\angular-locale_es-es.js" />
+    <Content Include="Scripts\i18n\angular-locale_es-gq.js" />
+    <Content Include="Scripts\i18n\angular-locale_es-gt.js" />
+    <Content Include="Scripts\i18n\angular-locale_es-hn.js" />
+    <Content Include="Scripts\i18n\angular-locale_es-ic.js" />
+    <Content Include="Scripts\i18n\angular-locale_es-mx.js" />
+    <Content Include="Scripts\i18n\angular-locale_es-ni.js" />
+    <Content Include="Scripts\i18n\angular-locale_es-pa.js" />
+    <Content Include="Scripts\i18n\angular-locale_es-pe.js" />
+    <Content Include="Scripts\i18n\angular-locale_es-pr.js" />
+    <Content Include="Scripts\i18n\angular-locale_es-py.js" />
+    <Content Include="Scripts\i18n\angular-locale_es-sv.js" />
+    <Content Include="Scripts\i18n\angular-locale_es-us.js" />
+    <Content Include="Scripts\i18n\angular-locale_es-uy.js" />
+    <Content Include="Scripts\i18n\angular-locale_es-ve.js" />
+    <Content Include="Scripts\i18n\angular-locale_es.js" />
+    <Content Include="Scripts\i18n\angular-locale_et-ee.js" />
+    <Content Include="Scripts\i18n\angular-locale_et.js" />
+    <Content Include="Scripts\i18n\angular-locale_eu-es.js" />
+    <Content Include="Scripts\i18n\angular-locale_eu.js" />
+    <Content Include="Scripts\i18n\angular-locale_fa-af.js" />
+    <Content Include="Scripts\i18n\angular-locale_fa-ir.js" />
+    <Content Include="Scripts\i18n\angular-locale_fa.js" />
+    <Content Include="Scripts\i18n\angular-locale_fi-fi.js" />
+    <Content Include="Scripts\i18n\angular-locale_fi.js" />
+    <Content Include="Scripts\i18n\angular-locale_fil-ph.js" />
+    <Content Include="Scripts\i18n\angular-locale_fil.js" />
+    <Content Include="Scripts\i18n\angular-locale_fr-be.js" />
+    <Content Include="Scripts\i18n\angular-locale_fr-bf.js" />
+    <Content Include="Scripts\i18n\angular-locale_fr-bi.js" />
+    <Content Include="Scripts\i18n\angular-locale_fr-bj.js" />
+    <Content Include="Scripts\i18n\angular-locale_fr-bl.js" />
+    <Content Include="Scripts\i18n\angular-locale_fr-ca.js" />
+    <Content Include="Scripts\i18n\angular-locale_fr-cd.js" />
+    <Content Include="Scripts\i18n\angular-locale_fr-cf.js" />
+    <Content Include="Scripts\i18n\angular-locale_fr-cg.js" />
+    <Content Include="Scripts\i18n\angular-locale_fr-ch.js" />
+    <Content Include="Scripts\i18n\angular-locale_fr-ci.js" />
+    <Content Include="Scripts\i18n\angular-locale_fr-cm.js" />
+    <Content Include="Scripts\i18n\angular-locale_fr-dj.js" />
+    <Content Include="Scripts\i18n\angular-locale_fr-fr.js" />
+    <Content Include="Scripts\i18n\angular-locale_fr-ga.js" />
+    <Content Include="Scripts\i18n\angular-locale_fr-gf.js" />
+    <Content Include="Scripts\i18n\angular-locale_fr-gn.js" />
+    <Content Include="Scripts\i18n\angular-locale_fr-gp.js" />
+    <Content Include="Scripts\i18n\angular-locale_fr-gq.js" />
+    <Content Include="Scripts\i18n\angular-locale_fr-km.js" />
+    <Content Include="Scripts\i18n\angular-locale_fr-lu.js" />
+    <Content Include="Scripts\i18n\angular-locale_fr-mc.js" />
+    <Content Include="Scripts\i18n\angular-locale_fr-mf.js" />
+    <Content Include="Scripts\i18n\angular-locale_fr-mg.js" />
+    <Content Include="Scripts\i18n\angular-locale_fr-ml.js" />
+    <Content Include="Scripts\i18n\angular-locale_fr-mq.js" />
+    <Content Include="Scripts\i18n\angular-locale_fr-ne.js" />
+    <Content Include="Scripts\i18n\angular-locale_fr-re.js" />
+    <Content Include="Scripts\i18n\angular-locale_fr-rw.js" />
+    <Content Include="Scripts\i18n\angular-locale_fr-sn.js" />
+    <Content Include="Scripts\i18n\angular-locale_fr-td.js" />
+    <Content Include="Scripts\i18n\angular-locale_fr-tg.js" />
+    <Content Include="Scripts\i18n\angular-locale_fr-yt.js" />
+    <Content Include="Scripts\i18n\angular-locale_fr.js" />
+    <Content Include="Scripts\i18n\angular-locale_gl-es.js" />
+    <Content Include="Scripts\i18n\angular-locale_gl.js" />
+    <Content Include="Scripts\i18n\angular-locale_gsw-ch.js" />
+    <Content Include="Scripts\i18n\angular-locale_gsw.js" />
+    <Content Include="Scripts\i18n\angular-locale_gu-in.js" />
+    <Content Include="Scripts\i18n\angular-locale_gu.js" />
+    <Content Include="Scripts\i18n\angular-locale_he-il.js" />
+    <Content Include="Scripts\i18n\angular-locale_he.js" />
+    <Content Include="Scripts\i18n\angular-locale_hi-in.js" />
+    <Content Include="Scripts\i18n\angular-locale_hi.js" />
+    <Content Include="Scripts\i18n\angular-locale_hr-hr.js" />
+    <Content Include="Scripts\i18n\angular-locale_hr.js" />
+    <Content Include="Scripts\i18n\angular-locale_hu-hu.js" />
+    <Content Include="Scripts\i18n\angular-locale_hu.js" />
+    <Content Include="Scripts\i18n\angular-locale_id-id.js" />
+    <Content Include="Scripts\i18n\angular-locale_id.js" />
+    <Content Include="Scripts\i18n\angular-locale_in.js" />
+    <Content Include="Scripts\i18n\angular-locale_is-is.js" />
+    <Content Include="Scripts\i18n\angular-locale_is.js" />
+    <Content Include="Scripts\i18n\angular-locale_it-ch.js" />
+    <Content Include="Scripts\i18n\angular-locale_it-it.js" />
+    <Content Include="Scripts\i18n\angular-locale_it-sm.js" />
+    <Content Include="Scripts\i18n\angular-locale_it.js" />
+    <Content Include="Scripts\i18n\angular-locale_iw.js" />
+    <Content Include="Scripts\i18n\angular-locale_ja-jp.js" />
+    <Content Include="Scripts\i18n\angular-locale_ja.js" />
+    <Content Include="Scripts\i18n\angular-locale_kn-in.js" />
+    <Content Include="Scripts\i18n\angular-locale_kn.js" />
+    <Content Include="Scripts\i18n\angular-locale_ko-kr.js" />
+    <Content Include="Scripts\i18n\angular-locale_ko.js" />
+    <Content Include="Scripts\i18n\angular-locale_ln-cd.js" />
+    <Content Include="Scripts\i18n\angular-locale_ln-cg.js" />
+    <Content Include="Scripts\i18n\angular-locale_ln.js" />
+    <Content Include="Scripts\i18n\angular-locale_lt-lt.js" />
+    <Content Include="Scripts\i18n\angular-locale_lt.js" />
+    <Content Include="Scripts\i18n\angular-locale_lv-lv.js" />
+    <Content Include="Scripts\i18n\angular-locale_lv.js" />
+    <Content Include="Scripts\i18n\angular-locale_ml-in.js" />
+    <Content Include="Scripts\i18n\angular-locale_ml.js" />
+    <Content Include="Scripts\i18n\angular-locale_mr-in.js" />
+    <Content Include="Scripts\i18n\angular-locale_mr.js" />
+    <Content Include="Scripts\i18n\angular-locale_ms-bn.js" />
+    <Content Include="Scripts\i18n\angular-locale_ms-my.js" />
+    <Content Include="Scripts\i18n\angular-locale_ms.js" />
+    <Content Include="Scripts\i18n\angular-locale_mt-mt.js" />
+    <Content Include="Scripts\i18n\angular-locale_mt.js" />
+    <Content Include="Scripts\i18n\angular-locale_nl-aw.js" />
+    <Content Include="Scripts\i18n\angular-locale_nl-be.js" />
+    <Content Include="Scripts\i18n\angular-locale_nl-cw.js" />
+    <Content Include="Scripts\i18n\angular-locale_nl-nl.js" />
+    <Content Include="Scripts\i18n\angular-locale_nl-sx.js" />
+    <Content Include="Scripts\i18n\angular-locale_nl.js" />
+    <Content Include="Scripts\i18n\angular-locale_no.js" />
+    <Content Include="Scripts\i18n\angular-locale_or-in.js" />
+    <Content Include="Scripts\i18n\angular-locale_or.js" />
+    <Content Include="Scripts\i18n\angular-locale_pl-pl.js" />
+    <Content Include="Scripts\i18n\angular-locale_pl.js" />
+    <Content Include="Scripts\i18n\angular-locale_pt-ao.js" />
+    <Content Include="Scripts\i18n\angular-locale_pt-br.js" />
+    <Content Include="Scripts\i18n\angular-locale_pt-gw.js" />
+    <Content Include="Scripts\i18n\angular-locale_pt-mz.js" />
+    <Content Include="Scripts\i18n\angular-locale_pt-pt.js" />
+    <Content Include="Scripts\i18n\angular-locale_pt-st.js" />
+    <Content Include="Scripts\i18n\angular-locale_pt.js" />
+    <Content Include="Scripts\i18n\angular-locale_ro-md.js" />
+    <Content Include="Scripts\i18n\angular-locale_ro-ro.js" />
+    <Content Include="Scripts\i18n\angular-locale_ro.js" />
+    <Content Include="Scripts\i18n\angular-locale_ru-md.js" />
+    <Content Include="Scripts\i18n\angular-locale_ru-ru.js" />
+    <Content Include="Scripts\i18n\angular-locale_ru-ua.js" />
+    <Content Include="Scripts\i18n\angular-locale_ru.js" />
+    <Content Include="Scripts\i18n\angular-locale_sk-sk.js" />
+    <Content Include="Scripts\i18n\angular-locale_sk.js" />
+    <Content Include="Scripts\i18n\angular-locale_sl-si.js" />
+    <Content Include="Scripts\i18n\angular-locale_sl.js" />
+    <Content Include="Scripts\i18n\angular-locale_sq-al.js" />
+    <Content Include="Scripts\i18n\angular-locale_sq.js" />
+    <Content Include="Scripts\i18n\angular-locale_sr-cyrl-ba.js" />
+    <Content Include="Scripts\i18n\angular-locale_sr-cyrl-me.js" />
+    <Content Include="Scripts\i18n\angular-locale_sr-cyrl-rs.js" />
+    <Content Include="Scripts\i18n\angular-locale_sr-cyrl.js" />
+    <Content Include="Scripts\i18n\angular-locale_sr-latn-ba.js" />
+    <Content Include="Scripts\i18n\angular-locale_sr-latn-me.js" />
+    <Content Include="Scripts\i18n\angular-locale_sr-latn-rs.js" />
+    <Content Include="Scripts\i18n\angular-locale_sr-latn.js" />
+    <Content Include="Scripts\i18n\angular-locale_sr.js" />
+    <Content Include="Scripts\i18n\angular-locale_sv-fi.js" />
+    <Content Include="Scripts\i18n\angular-locale_sv-se.js" />
+    <Content Include="Scripts\i18n\angular-locale_sv.js" />
+    <Content Include="Scripts\i18n\angular-locale_sw-ke.js" />
+    <Content Include="Scripts\i18n\angular-locale_sw-tz.js" />
+    <Content Include="Scripts\i18n\angular-locale_sw.js" />
+    <Content Include="Scripts\i18n\angular-locale_ta-in.js" />
+    <Content Include="Scripts\i18n\angular-locale_ta-lk.js" />
+    <Content Include="Scripts\i18n\angular-locale_ta.js" />
+    <Content Include="Scripts\i18n\angular-locale_te-in.js" />
+    <Content Include="Scripts\i18n\angular-locale_te.js" />
+    <Content Include="Scripts\i18n\angular-locale_th-th.js" />
+    <Content Include="Scripts\i18n\angular-locale_th.js" />
+    <Content Include="Scripts\i18n\angular-locale_tl.js" />
+    <Content Include="Scripts\i18n\angular-locale_tr-tr.js" />
+    <Content Include="Scripts\i18n\angular-locale_tr.js" />
+    <Content Include="Scripts\i18n\angular-locale_uk-ua.js" />
+    <Content Include="Scripts\i18n\angular-locale_uk.js" />
+    <Content Include="Scripts\i18n\angular-locale_ur-in.js" />
+    <Content Include="Scripts\i18n\angular-locale_ur-pk.js" />
+    <Content Include="Scripts\i18n\angular-locale_ur.js" />
+    <Content Include="Scripts\i18n\angular-locale_vi-vn.js" />
+    <Content Include="Scripts\i18n\angular-locale_vi.js" />
+    <Content Include="Scripts\i18n\angular-locale_zh-cn.js" />
+    <Content Include="Scripts\i18n\angular-locale_zh-hans-cn.js" />
+    <Content Include="Scripts\i18n\angular-locale_zh-hans-hk.js" />
+    <Content Include="Scripts\i18n\angular-locale_zh-hans-mo.js" />
+    <Content Include="Scripts\i18n\angular-locale_zh-hans-sg.js" />
+    <Content Include="Scripts\i18n\angular-locale_zh-hans.js" />
+    <Content Include="Scripts\i18n\angular-locale_zh-hant-hk.js" />
+    <Content Include="Scripts\i18n\angular-locale_zh-hant-mo.js" />
+    <Content Include="Scripts\i18n\angular-locale_zh-hant-tw.js" />
+    <Content Include="Scripts\i18n\angular-locale_zh-hant.js" />
+    <Content Include="Scripts\i18n\angular-locale_zh-hk.js" />
+    <Content Include="Scripts\i18n\angular-locale_zh-tw.js" />
+    <Content Include="Scripts\i18n\angular-locale_zh.js" />
+    <Content Include="Scripts\i18n\angular-locale_zu-za.js" />
+    <Content Include="Scripts\i18n\angular-locale_zu.js" />
+    <Content Include="Scripts\jquery-2.0.3.js" />
+    <Content Include="Scripts\jquery-2.0.3.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui-1.10.3.js" />
+    <Content Include="Scripts\jquery-ui-1.10.3.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\JqueryScript.js" />
+    <Content Include="Scripts\jquerySlides.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Templates\page.html" />
+    <Content Include="Templates\photoAlbum.html" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Scripts\jquery-2.0.3.min.map" />
+    <Content Include="Views\Account\ChangePassword.cshtml" />
+    <Content Include="Views\Account\ChangePasswordSuccess.cshtml" />
+    <Content Include="Views\Account\LogOn.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\CalendarClient\ListOfEvents.cshtml" />
+    <Content Include="Views\GuestBook\Show.cshtml" />
+    <Content Include="Views\GuestBook\Sign.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\MailToUs\SendMail.cshtml" />
+    <Content Include="Views\Menu\LeftMenu.cshtml" />
+    <Content Include="Views\NewsClient\ListOfNews.cshtml" />
+    <Content Include="Views\Orders\Order.cshtml" />
+    <Content Include="Views\Photo\Gallery.cshtml" />
+    <Content Include="Views\Photo\GalleryList.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\_LogOnPartial.cshtml" />
+    <Content Include="Views\SideMenu\Show.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\BlogClient\PostList.cshtml" />
+    <Content Include="Scripts\version.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\Calendar\" />
+    <Folder Include="App_Data\Gallery\" />
+    <Folder Include="App_Data\GuestBook\" />
+    <Folder Include="App_Data\Mail\MailAttachments\" />
+    <Folder Include="App_Data\Users\" />
+    <Folder Include="Areas\Admin\Views\Shared\" />
+    <Folder Include="Images\" />
+    <Folder Include="Models\" />
+    <Folder Include="Public\Gallery\Io\" />
+    <Folder Include="Scripts\Ts\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\OFSCMSLibraries\DataClasses\DataClasses.csproj">
+      <Project>{84e413ef-ac26-42f6-bac0-95b96cddfc45}</Project>
+      <Name>DataClasses</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\OFSCMSLibraries\OFSCore\OFSCore.csproj">
+      <Project>{3831cdb8-d101-418a-a780-0a066b5fd32b}</Project>
+      <Name>OFSCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\OFSCMSLibraries\OFSMVC.Custom\OFSMVC.Custom.csproj">
+      <Project>{8432d057-f66e-4388-8b82-9b177f2d8c72}</Project>
+      <Name>OFSMVC.Custom</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\OFSCMSLibraries\OFSSecurity\OFSSecurity.csproj">
+      <Project>{02b6a863-fcd8-4f80-9efb-9cdcda813401}</Project>
+      <Name>OFSSecurity</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>16008</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:18271/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

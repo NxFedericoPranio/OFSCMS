@@ -1,0 +1,48 @@
+﻿<h2>Le mie immagini</h2>
+<div id ="PhotoGallery">
+
+    <input type="hidden" value="{{data.TotalPages}}" id="hdnTotalPages"/>
+    <input type="hidden" id="selectedImage"/>
+
+    <div id ="DivGalleryList">
+        <ul>
+            <li ng-repeat="gallery  in galleries" ng:class="{selectedGallery: gallery==data.GalleryName}">
+                <a href="#gallery/album/{{gallery}}/0">{{gallery}}</a>
+            </li>
+        </ul>
+    </div>
+
+    <ul id="thumbnails">    
+            <li class="item" ng-repeat="pic in data.Pics">
+                <img desc="{{pic.Description}}" 
+                    index="{{pic.Index}}" 
+                    href="Public/Gallery/{{pic.GalleryName}}/{{pic.FileName}}"
+                    alt="{{pic.Description}}" 
+                    ng-src="/public/Gallery/Thumbs/{{pic.GalleryName}}/{{pic.FileName}}" 
+                    ng-click="setImage(pic)"
+                    class="thumbnail-border" />
+                <span class="image-overlay">{{pic.Title}}</span>
+            </li>
+    </ul>
+
+</div>
+<div id ="GalleryPager">
+    <a data-ng-repeat="i in range" href='#/gallery/album/{{data.GalleryName}}/{{$index}}' title='{{$index}}'><span>{{$index +1}}&nbsp;</span></a>
+</div>
+
+<div id="PopupImageWrapper"  style="display:none;">
+    <div id="closeImage">
+        <span>&nbsp;|&nbsp;<input type="checkbox" id="chkSlideShow" value="Slideshow">Slideshow&nbsp;|&nbsp;</span> 
+        <span id="close">&nbsp;Close&nbsp;</span>
+        <span id="GalleryArrows">
+            <img src="../../Graphics/arrowsx.gif" id="arrowLeft" style = "width: 20px; padding: 2px"/>
+            <img src="../../Graphics/arrowdx.gif" id="arrowRight" style = "width: 20px; padding: 2px"/>
+        </span>
+    </div>
+
+    <div id="PopupImage"><img id="ImgGallery" src="#"/></div>
+    
+    <div id="WaitPanel"><img id="ImgWait" src="../../Graphics/wait.gif"/></div>
+    <div id="ImageDescription"></div>
+    
+</div>

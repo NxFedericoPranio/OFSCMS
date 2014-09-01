@@ -1,0 +1,48 @@
+﻿@model DataClasses.OFS.PhotoGallery.Gallery
+     @using DataClasses.OFS.PhotoGallery
+
+    @using OFSCore.Extension
+<h2>Le mie immagini</h2>
+<div id ="PhotoGallery">
+
+    @Html.Action("GalleryList","Photo", null)
+
+    <input type="hidden" value="@Model.TotalPages" id="hdnTotalPages"/>
+<ul id="thumbnails">
+    @foreach (Pic pic in Model.Pics)
+    {
+        <li class="item">
+            <a href="@Url.Content("~/Public/Gallery/" + pic.GalleryName +"/" +pic.FileName)" desc="@pic.Description" index="@pic.Index" >
+                <img alt="@pic.Description" src="@Url.Content("~/public/Gallery/Thumbs/" + pic.GalleryName +"/" + pic.FileName)" class="thumbnail-border" />
+            </a>
+                <span class="image-overlay">@pic.Title</span>
+        </li>
+
+    }
+</ul>
+
+</div>
+<div id ="GalleryPager">
+    @{OFSCore.Base.ControllerBase controller =(OFSCore.Base.ControllerBase)HttpContext.Current.Session["controllerInstance"];}
+    @for (int i = 0; i < Model.TotalCount / controller.PageSize; i++)
+    {       
+         <a href="@Url.BuildPagerLink(Model, i)" title="@i"><span>@(i+1)</span></a>
+    }
+</div>
+
+<div id="PopupImageWrapper">
+    <div id="closeImage">
+        <span>&nbsp;|&nbsp;<input type="checkbox" id="chkSlideShow" value="Slideshow">Slideshow&nbsp;|&nbsp;</span> 
+        <span id="close">&nbsp;Close&nbsp;</span>
+        <span id="GalleryArrows">
+            <img src="../../Graphics/arrowsx.gif" id="arrowLeft" style = "width: 20px; padding: 2px"/>
+            <img src="../../Graphics/arrowdx.gif" id="arrowRight" style = "width: 20px; padding: 2px"/>
+        </span>
+    </div>
+
+    <div id="PopupImage"><img id="ImgGallery" src="#"/></div>
+    
+    <div id="WaitPanel"><img id="ImgWait" src="../../Graphics/wait.gif"/></div>
+    <div id="ImageDescription"></div>
+    
+</div>

@@ -1,0 +1,80 @@
+﻿@{
+    ViewBag.Title = "EditNews";
+}
+
+@model List<DataClasses.DataModel.Generic.IOFSObject>
+@using OFSCore.Extension
+
+@functions{
+    public MvcHtmlString renderItem(System.Collections.ArrayList Data, int livello)
+    {
+        System.Text.StringBuilder output = new System.Text.StringBuilder();
+        foreach (DataClasses.DataModel.Menu.OFSMenu item2 in Data)
+        {
+            var itemappo2 = (DataClasses.DataModel.Menu.OFSMenu)item2;
+            
+            output.Append("<tr>");
+                output.Append("<td>");
+                    output.Append(@Html.DisplayFor(modelItem => itemappo2.Text));
+                output.Append("</td>");
+         
+                output.Append("<td>");
+                for (int i = 0; i <= livello; i++)
+                    output.Append("&nbsp;&nbsp;");
+                         
+                     output.Append(@Html.ActionLink("Edit", "Edit", new { id=itemappo2.Id }).ToString()); 
+                      output.Append(" | ");
+                     output.Append(@Html.ActionLink("Details", "Details", new { id=itemappo2.Id }));
+                      output.Append(" | ");
+                     output.Append(@Html.ActionLink("Delete", "Delete", new { id=itemappo2.Id }));
+               output.Append("</td>");
+            output.Append("</tr>");
+            output.Append(renderItem(itemappo2.MenuChildren.Children, livello +1));
+        
+        }
+        MvcHtmlString res = new MvcHtmlString(output.ToString());
+        
+        return res;
+    }
+}
+<h2>Index</h2>
+<div id="adminList">
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class=".tableAdminList">
+    <tr>
+        <th>
+            Code
+        </th>
+        <th>
+            Description
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    var itemappo = (DataClasses.DataModel.Menu.OFSMenu)item;
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => itemappo.Text)
+        </td>
+         
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=itemappo.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=itemappo.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=itemappo.Id })
+        </td>
+    </tr>
+    var itemappo2 = itemappo;
+    @Html.Raw(renderItem(itemappo2.MenuChildren.Children, 0));
+       
+}
+    
+
+
+</table>
+
+
+</div>

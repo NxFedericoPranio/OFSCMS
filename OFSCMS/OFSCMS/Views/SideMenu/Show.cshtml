@@ -1,0 +1,29 @@
+﻿@model List<DataClasses.DataModel.Generic.IOFSObject>
+@using OFSCore.Extension
+
+
+<div id="menu">
+      @foreach (DataClasses.DataModel.Menu.OFSMenu item in Model)
+       {
+        <h2><a href="@Url.BuildMenuLink(item)" title="@item.Text"><span>@item.Text</span></a></h2>
+        <ul class="menu">
+            @foreach (DataClasses.DataModel.Menu.OFSMenu child in item.MenuChildren.Children)
+            {
+                <li><a href="@Url.BuildMenuLink(child)" title="@child.Text"><span>@child.Text</span>@if(child.MenuChildren.Children.Count>0){<span id="menuArrow">&#9658;</span>}</a>   
+                @if(child.MenuChildren.Children.Count>0){
+                <div id="menu2"> 
+                    <ul class="menu2">
+                    @foreach (DataClasses.DataModel.Menu.OFSMenu child2 in child.MenuChildren.Children)
+                     {
+                         <li><a href="@Url.BuildMenuLink(child2)" title="@child2.Text"><span>@child2.Text</span></a></li>
+                     }                
+                    </ul>
+                </div>
+                }
+
+                </li>
+            }
+        </ul>
+      }
+
+</div>

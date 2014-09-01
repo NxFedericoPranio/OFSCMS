@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{84E413EF-AC26-42F6-BAC0-95B96CDDFC45}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DataClasses</RootNamespace>
+    <AssemblyName>DataClasses</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\AspNetMvc.3.0.20105.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataModel\Blog\OFSPostComment.cs" />
+    <Compile Include="DataModel\Blog\OFSPost.cs" />
+    <Compile Include="DataModel\Blog\OFSPostsXml.cs" />
+    <Compile Include="DataModel\Calendar\OFSCalendarXml.cs" />
+    <Compile Include="DataModel\Calendar\OFSEvent.cs" />
+    <Compile Include="DataModel\Generic\GenericObject.cs" />
+    <Compile Include="DataModel\Generic\IOFSObjectBase.cs" />
+    <Compile Include="DataModel\Generic\OFSObjectGenericForManyInOneFile.cs" />
+    <Compile Include="DataModel\Generic\OFSObjects.cs" />
+    <Compile Include="DataModel\Generic\OFSObject.cs" />
+    <Compile Include="DataModel\Guestbook\GuestMessage.cs" />
+    <Compile Include="DataModel\Guestbook\GuestMessagesXml.cs" />
+    <Compile Include="DataModel\Mail\MailMessage.cs" />
+    <Compile Include="DataModel\Mail\MailMessagesXml.cs" />
+    <Compile Include="DataModel\Orders\Order.cs" />
+    <Compile Include="DataModel\Orders\OrdersXml.cs" />
+    <Compile Include="DataModel\Pages\OFSPageBox.cs" />
+    <Compile Include="DataModel\PhotoAlbum\OFSPhotoGallery.cs" />
+    <Compile Include="DataModel\PhotoAlbum\OFSPhotoAlbum.cs" />
+    <Compile Include="DataModel\PhotoAlbum\OFSPic.cs" />
+    <Compile Include="DataModel\Users\AccountModels.cs" />
+    <Compile Include="DataModel\Users\UsersXML.cs" />
+    <Compile Include="ILoadingPolicy.cs" />
+    <Compile Include="DataModel\Generic\IOFSObject.cs" />
+    <Compile Include="DataModel\Generic\IOFSObjects.cs" />
+    <Compile Include="DataModel\Menu\OFSMenu.cs" />
+    <Compile Include="DataModel\Menu\OFSMenuChildren.cs" />
+    <Compile Include="DataModel\Menu\OFSMenuesXml.cs" />
+    <Compile Include="DataModel\News\OFSNew.cs" />
+    <Compile Include="DataModel\News\OFSNewsXml.cs" />
+    <Compile Include="DataModel\Generic\OFSObjectsXml.cs" />
+    <Compile Include="DataModel\Pages\OFSPagesMemory.cs" />
+    <Compile Include="DataModel\Pages\OFSPage.cs" />
+    <Compile Include="DataModel\Pages\OFSPagesXml.cs" />
+    <Compile Include="DataModel\Sections\OFSSection.cs" />
+    <Compile Include="DataModel\Sites\OFSSite.cs" />
+    <Compile Include="Interfaces\INeedApprovation.cs" />
+    <Compile Include="OFS\Folders.cs" />
+    <Compile Include="OFS\Linq\Xml\OfsXDocument.cs" />
+    <Compile Include="OFS\News\ItemOfNews.cs" />
+    <Compile Include="OFS\News\News.cs" />
+    <Compile Include="OFS\PhotoGallery\Galleries.cs" />
+    <Compile Include="OFS\PhotoGallery\Gallery.cs" />
+    <Compile Include="OFS\PhotoGallery\Pic.cs" />
+    <Compile Include="OFS\PhotoGallery\Pics.cs" />
+    <Compile Include="OFS\PhotoGallery\Thubnail.cs" />
+    <Compile Include="OFS\PhotoGallery\Util.cs" />
+    <Compile Include="OFS\Serialization\Serializator.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\OfsFileHelper.cs" />
+    <Compile Include="Utils\Util.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="OFS\Cache\" />
+    <Folder Include="OFS\ErrorHandler\" />
+    <Folder Include="OFS\PageHandler\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

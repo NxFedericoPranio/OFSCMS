@@ -1,0 +1,78 @@
+﻿
+   @using OFSCore.Extension
+
+@model DataClasses.DataModel.Guestbook.GuestMessage
+           @using DataClasses.DataModel.Guestbook;
+<script type="text/javascript">
+$(document).ready(function(){
+    var button = $('#close');
+
+
+    button.click(function () {
+
+        var signDiv = $('#SignGuestbookContainer');
+        signDiv.hide();
+    });
+
+});
+</script>
+
+<h2>Firma il guestbook</h2>
+<p id="close">chiudi</p>
+
+
+@using (Html.BeginForm("Sign", "GuestBook"))
+{
+<div id="SignGuestbook">
+ @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Messaggio</legend>
+
+        @Html.HiddenFor(model => model.Id)        
+        @Html.HiddenFor(model => model.Culture)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Nick)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Nick)
+            @Html.ValidationMessageFor(model => model.Nick)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Title)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Title)
+            @Html.ValidationMessageFor(model => model.Title)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Sender) Email che non sarà pubblicata
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Sender)
+            @Html.ValidationMessageFor(model => model.Sender)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Message)
+        </div>
+        <div class="editor-field">
+            @Html.TextAreaFor(model => model.Message, 8, 47, null)
+            @Html.ValidationMessageFor(model => model.Message)
+        </div>
+        
+            <div class="editor-field">
+                <textarea style="width:400px; height:70px;">@ViewBag.Privacy</textarea>
+            </div>
+        <div  class="editor-field">
+                <span>Accetto le condizioni sulla riservatezza dei dati</span>@Html.CheckBoxFor(m => m.PrivacyAccepted)
+                @Html.ValidationMessageFor(m => m.PrivacyAccepted)
+         </div>
+        <p>
+            <input type="submit" value="Invia" />
+        </p>
+    </fieldset>
+</div>
+}

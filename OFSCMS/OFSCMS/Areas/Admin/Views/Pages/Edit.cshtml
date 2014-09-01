@@ -1,0 +1,77 @@
+﻿@{
+    ViewBag.Title = "Edit Page";
+}
+@model DataClasses.DataModel.Pages.OFSPage
+
+<script src="@Url.Content("~/Areas/Admin/Components/ckeditor3.6.4/_Samples/ckeditor/ckeditor.js")"></script>
+<script src="@Url.Content("~/Areas/Admin/Components/ckeditor3.6.4/_Samples/ckeditor/adapters/jquery.js")"></script>
+
+<h2>Edit Page</h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+@using (Html.BeginForm())
+{
+<div id="adminForm">
+ @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>TestMain</legend>
+
+        @Html.HiddenFor(model => model.Id)        
+        @Html.HiddenFor(model => model.Culture)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Title)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Title)
+            @Html.ValidationMessageFor(model => model.Title)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SeoTitle)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SeoTitle)
+            @Html.ValidationMessageFor(model => model.SeoTitle)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Content)
+        </div>
+        <div class="editor-field">
+            <div id="content">
+            @Html.TextAreaFor(model => model.Content,50,50, 
+        new RouteValueDictionary(new { @id = "ckTextarea"}))
+            </div>
+            @Html.ValidationMessageFor(model => model.Content)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+    <script>
+
+        var config =
+           {
+               height: 800,
+               width: 700,
+               //linkShowAdvancedTab: false,
+               //scayt_autoStartup: true,
+               enterMode: Number(1),
+               toolbar_Full: [['Styles', 'Bold', 'Italic', 'Underline', 'SpellChecker', 'Scayt', '-', 'NumberedList', 'BulletedList'],
+                               ['Link', 'Unlink'], ['Undo', 'Redo', '-', 'SelectAll']],
+               contentsCss: '@Url.Content("../../../../Content/Site.css")',
+               stylesSet: [
+                { name: 'Red', element: 'span', attributes: { 'class': 'red' } },
+                { name: 'Marker: Yellow', element: 'span', styles: { 'background-color': 'Yellow' } }
+               ]
+           };
+        $('#ckTextarea').ckeditor(config);
+        $('#ckTextarea').replace( 'content' );
+
+    </script>
+</div>
+}

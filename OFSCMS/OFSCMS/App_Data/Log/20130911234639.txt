@@ -1,0 +1,2 @@
+11/09/2013 23.46.39 - There was an error reflecting property 'Id'.
+11/09/2013 23.46.39 - Member 'OFSNew.Id' hides inherited member 'OFSObject.Id', but has different custom attributes.

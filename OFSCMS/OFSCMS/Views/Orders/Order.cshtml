@@ -1,0 +1,122 @@
+﻿@{
+    ViewBag.Title = "Ordina il libro";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    @using OFSCore.Extension
+
+@model DataClasses.DataModel.Orders.Order
+           @using DataClasses.DataModel.Orders;
+
+
+<h2>Ordina il libro</h2>
+
+
+
+@using (Html.BeginForm("Order", "Orders"))
+{
+<div id="adminForm">
+ @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Ordine</legend>
+
+        @Html.HiddenFor(model => model.Id)        
+        @Html.HiddenFor(model => model.Culture)  
+        @Html.HiddenFor(model => model.Object)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Sender)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Sender)
+            @Html.ValidationMessageFor(model => model.Sender)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Surname)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Surname)
+            @Html.ValidationMessageFor(model => model.Surname)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Address)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Address)
+            @Html.ValidationMessageFor(model => model.Address)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.City)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.City)
+            @Html.ValidationMessageFor(model => model.City)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Country)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Country)
+            @Html.ValidationMessageFor(model => model.Country)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ZipCode)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ZipCode)
+            @Html.ValidationMessageFor(model => model.ZipCode)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TelephonNumber)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TelephonNumber)
+            @Html.ValidationMessageFor(model => model.TelephonNumber)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.QuantityVal)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.QuantityVal, 
+                new SelectList(Model.Quantities, 
+                               "QuantityNum", "Value", 
+                               Model.Quantities.First().Value))
+            @Html.ValidationMessageFor(model => model.QuantityVal)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Message)
+        </div>
+        <div class="editor-field">
+            @Html.TextAreaFor(model => model.Message,20,47,null)
+            @Html.ValidationMessageFor(model => model.Message)
+        </div>
+        
+            <div class="editor-field">
+                <textarea style="width:400px; height:100px;">@ViewBag.Privacy</textarea>
+            </div>
+        <div  class="editor-field">
+                <span>Accetto le condizioni sulla riservatezza dei dati</span>@Html.CheckBoxFor(m => m.PrivacyAccepted)
+                @Html.ValidationMessageFor(m => m.PrivacyAccepted)
+         </div>
+        <p>
+            <input type="submit" value="Invia" />
+        </p>
+    </fieldset>
+</div>
+}

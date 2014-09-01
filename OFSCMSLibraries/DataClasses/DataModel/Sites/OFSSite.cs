@@ -1,0 +1,90 @@
+﻿using DataClasses.DataModel.Generic;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace DataClasses.DataModel.Sites
+{
+    public class OFSSite: OFSObject
+    {
+        public string Referrer
+        {
+            get;
+            set;
+        }
+
+        public string Url
+        {
+            get;
+            set;
+        }
+
+        public bool IsSubSite
+        {
+            get;
+            set;
+        }
+
+        public int Id
+        {
+            get;
+            set;
+        }
+
+        public string Culture
+        {
+            get;
+            set;
+        }
+
+        public int PageId
+        {
+            get;
+            set;
+        }
+
+        public DateTime DateAdded
+        {
+            get;
+            set;
+        }
+
+        public DateTime DateModified
+        {
+            get;
+            set;
+        }
+
+        public bool Deleted
+        {
+            get;
+            set;
+        }
+
+        public DateTime DateDeleted
+        {
+            get;
+            set;
+        }
+
+        public IOFSObject GetNewIstance()
+        {
+            throw new NotImplementedException();
+        }
+
+
+        public int IdSection
+        {
+            get;
+            set;
+        }
+
+        public int IdSite
+        {
+            get;
+            set;
+        }
+    }
+}

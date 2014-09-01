@@ -1,0 +1,15 @@
+﻿@model DataClasses.OFS.PhotoGallery.Galleries
+     @using DataClasses.OFS.PhotoGallery
+    @using OFSCore.Extension
+
+<select id="SelectGallery">
+    @foreach (string gallery in Model)
+    {
+        <option value="@gallery">@gallery</option>
+    }
+</select>
+
+
+<script type="text/javascript">
+    $("#SelectGallery").val('@Request.QueryString["SelectedGallery"]');
+</script>

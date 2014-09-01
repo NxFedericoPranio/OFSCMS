@@ -1,0 +1,13 @@
+﻿@model List<DataClasses.DataModel.Generic.IOFSObject>
+    @using OFSCore.Extension
+
+<select id="ComboMenu">
+    @foreach (DataClasses.DataModel.Menu.OFSMenu menu in Model)
+    {
+        <option value="@menu.Id">@menu.Text</option>
+    }
+</select>
+
+<script type="text/javascript">
+    $("#ComboMenu").val('@ViewBag.SelectedMenu');
+</script>

@@ -1,0 +1,73 @@
+﻿@{
+    ViewBag.Title = "Edit Page";
+}
+@model DataClasses.DataModel.Menu.OFSMenu
+
+
+<h2>Edit Menues</h2>
+
+
+
+@using (Html.BeginForm())
+{
+<div id="adminForm">
+ @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>TestMain</legend>
+
+        @Html.HiddenFor(model => model.Id)        
+        @Html.HiddenFor(model => model.Culture)
+        
+
+       
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Text)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Text)
+            @Html.ValidationMessageFor(model => model.Text)
+        </div>
+
+
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PageId)
+        </div>
+        <div class="editor-field">
+          @{var dicP = new Dictionary<string, object>();
+            dicP.Add("selectedPage", ViewBag.PageRelated);
+           
+            @Html.Action("ComboPages","Pages",  new RouteValueDictionary(dicP))
+            @Html.ValidationMessageFor(model => model.PageId)
+          }
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.HRef)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.HRef)
+            @Html.ValidationMessageFor(model => model.HRef)
+        </div>
+
+
+         <div class="editor-label">
+            @Html.LabelFor(model => model.Parent)
+        </div>
+        <div class="editor-field"> 
+          @{var dic = new Dictionary<string, object>();
+            dic.Add("selectedMenu", ViewBag.ParentMenu);
+           
+            @Html.Action("ComboMenu","Menues",  new RouteValueDictionary(dic))
+            @Html.ValidationMessageFor(model => model.Parent)
+            }
+            
+        </div>
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+   
+</div>
+}

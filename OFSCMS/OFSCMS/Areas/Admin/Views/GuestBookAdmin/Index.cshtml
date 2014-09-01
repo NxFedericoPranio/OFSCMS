@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.Title = "EditNews";
+}
+
+@model List<DataClasses.DataModel.Generic.IOFSObject>
+@using OFSCore.Extension
+
+
+<h2>Index</h2>
+<div id="adminList">
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class=".tableAdminList">
+    <tr>
+        <th>
+            Code
+        </th>
+        <th>
+            Approved
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    var itemappo = (DataClasses.DataModel.Guestbook.GuestMessage)item;
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => itemappo.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => itemappo.IsAapproved)
+        </td>
+         
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>
+
+
+</div>

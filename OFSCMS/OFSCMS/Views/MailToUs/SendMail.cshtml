@@ -1,0 +1,62 @@
+﻿@{
+    ViewBag.Title = "Scrivici";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    @using OFSCore.Extension
+
+@model DataClasses.DataModel.Mail.MailMessage
+           @using DataClasses.DataModel.News;
+
+
+<h2>Scrivici</h2>
+
+
+
+@using (Html.BeginForm("SendMail", "MailToUs"))
+{
+<div id="adminForm">
+ @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Messaggio</legend>
+
+        @Html.HiddenFor(model => model.Id)        
+        @Html.HiddenFor(model => model.Culture)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Object)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Object)
+            @Html.ValidationMessageFor(model => model.Object)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Sender)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Sender)
+            @Html.ValidationMessageFor(model => model.Sender)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Message)
+        </div>
+        <div class="editor-field">
+            @Html.TextAreaFor(model => model.Message,20,47,null)
+            @Html.ValidationMessageFor(model => model.Message)
+        </div>
+        
+            <div class="editor-field">
+                <textarea style="width:400px; height:100px;">@ViewBag.Privacy</textarea>
+            </div>
+        <div  class="editor-field">
+                <span>Accetto le condizioni sulla riservatezza dei dati</span>@Html.CheckBoxFor(m => m.PrivacyAccepted)
+                @Html.ValidationMessageFor(m => m.PrivacyAccepted)
+         </div>
+        <p>
+            <input type="submit" value="Invia" />
+        </p>
+    </fieldset>
+</div>
+}
