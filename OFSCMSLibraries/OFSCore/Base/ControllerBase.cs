@@ -23,10 +23,10 @@ namespace OFSCore.Base
 
         protected void SetAngularJsValues()
         {
-
             ViewData["angularApp"] = string.Empty;
             ViewData["angularView"] = string.Empty;
         }
+
 
         
     }

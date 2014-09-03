@@ -1,4 +1,14 @@
 ﻿$(function () {
+    $("#Date").datepicker();
+    $("#Date").datepicker("option",
+            $.datepicker.regional['it']);
+    $("#Date").datepicker("option", "DateFormat", 'yy/mm/dd');
+    //$("#Date").attr('disabled', 'disabled');
+
+});
+
+
+$(function () {
     $('#Time').timepicker({
         stepMinute: 15,
         hour: 21,
@@ -32,15 +42,6 @@ $(function ($) {
         yearSuffix: ''
     };
     $.datepicker.setDefaults($.datepicker.regional['it']);
-});
-
-$(function () {
-    $("#Date").datepicker();
-    $("#Date").datepicker("option",
-            $.datepicker.regional['it']);
-    $("#Date").datepicker("option", "DateFormat", 'yy/mm/dd');
-    //$("#Date").attr('disabled', 'disabled');
-
 });
 
 

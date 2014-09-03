@@ -65,7 +65,7 @@ namespace OFSCore.Extension
             }
             else
             {
-                return OFSCore.Folders.WebRoot + "#" + urlHelper.Action(item.Action,
+                return OFSCore.Folders.WebRoot + "#!" + urlHelper.Action(item.Action,
                                         item.Controller,
                                         parameters).ToLower();
             }

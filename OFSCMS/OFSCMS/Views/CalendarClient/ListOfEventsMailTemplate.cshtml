@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "Calendario";
+}
+
+@model List<DataClasses.DataModel.Generic.IOFSObject>
+
+<div id="newsContainer">  
+       @foreach (DataClasses.DataModel.Calendar.OFSEvent item in Model)
+       {
+           <h2>@item.Title</h2>
+           <p>@item.Description</p>
+       }     
+</div>
+
+
+

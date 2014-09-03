@@ -6,9 +6,13 @@
     <title>@ViewBag.Title</title>
     <meta name="keywords" content='@ViewBag.Keywords'/>
     <meta name="description" content='@ViewBag.Description'/>
+    
+    @System.Web.Optimization.Styles.Render("~/Content/themes/base/css")
     <link href="@Url.Content("~/Content/AdminStyle.css")" rel="stylesheet" type="text/css" />
-    <script src="@Url.Content("~/Scripts/jquery-2.0.3.min.js")" type="text/javascript"></script>
-    <script src="@Url.Content("~/Scripts/modernizr-2.6.2.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/framework/jquery-2.0.3.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/framework/jquery-ui-1.10.3.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/framework/modernizr-2.6.2.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/framework/jquery-ui-timepicker-addon.js")" type="text/javascript"></script>
     <script src="@Url.Content("~/Scripts/JqueryScript.js")" type="text/javascript"></script>
     <script type="text/javascript">
         var scriptName = '@ViewBag.ScriptName';

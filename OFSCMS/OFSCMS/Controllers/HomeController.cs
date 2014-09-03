@@ -10,29 +10,60 @@ using DataClasses;
 using OFSCore.Extension;
 using System.Threading.Tasks;
 using DataClasses.DataModel.Pages;
+using DataClasses.DataModel.Generic;
+using DataClasses.DataModel.Calendar;
 
 namespace OFSMVC.Controllers
 {
     public class HomeController : OFSCore.Base.ControllerBase
     {
+        private string seoString = "?_escaped_fragment_=";
+        private string seoCheck= "?IsSeoReuqest";
         public ActionResult Index(string id = null)
-        {            
+        {
+            testrenderContoller();            
             if (id == null) {
                 return Pages();
             }
-            else return new RedirectResult(string.Format("Home/Pages/{0}", id.ToString()));
+            else return new RedirectResult(string.Format("../Home/Pages/{0}", id.ToString()));
+        }
+
+        private void testrenderContoller()
+        {
+            ViewData["angularApp"] = string.Empty;
+            ViewData["angularView"] = string.Empty;
+            string pathNews = string.Empty;
+            OFSObjects context = new OFSCalendarXml(OFSCore.Folders.CalendarFolder);
+            List<IOFSObject> news = context.GetAll<DataClasses.DataModel.Calendar.OFSEvent>().OrderByDescending(e => ((OFSEvent)e).Date).ToList();
+            string  content = this.ViewToString("../CalendarClient/ListOfEventsMailTemplate", news);
+
         }
 
         
+
+
         public ActionResult Pages(string id = null)
         {
+            if (Request.Url.ToString().Contains(seoString))
+            {
+                base.SetAngularJsValues();
+                Response.Redirect(string.Concat(Request.Url.ToString().Replace(seoString, string.Empty), "?IsSeoReuqest"));
+                return null;
+            }
+
             ActionResult view = GetSpecialView(id);
             ViewBag.IsSubApp = true;
             if (view != null)
                 return view;
 
             ViewBag.IsSubApp = false;
-            SetAngularJsValues();
+
+            if (Request.Url.ToString().Contains(seoCheck))
+                base.SetAngularJsValues();
+            else
+                this.SetAngularJsValues();
+
+
             if (id == null)
                 id = "1";
             OFSPage page = GetPage(id);
@@ -137,4 +168,7 @@ namespace OFSMVC.Controllers
             return View();
         }
     }
+
+
+    
 }
