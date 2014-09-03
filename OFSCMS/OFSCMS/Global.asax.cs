@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Http;
 using System.Web.Mvc;
+using System.Web.Optimization;
 using System.Web.Routing;
 
 namespace OFSCMS
@@ -24,6 +25,8 @@ namespace OFSCMS
             //RouteConfig.RegisterRoutes(RouteTable.Routes);
 
             AreaRegistration.RegisterAllAreas();
+
+            BundleConfig.RegisterBundles(BundleTable.Bundles);
 
             //// Use LocalDB for Entity Framework by default
             //Database.DefaultConnectionFactory = new SqlConnectionFactory("Data Source=(localdb)\v11.0; Integrated Security=True; MultipleActiveResultSets=True");
