@@ -25,7 +25,7 @@ namespace DataClasses.DataModel.Orders
         public Order()
         {
             QuantityVal = 1;
-            Object = "Ordine di libri dal sito pranio.it";
+            Object = "Ordine";
         }
 
         public List<Quantity> Quantities =

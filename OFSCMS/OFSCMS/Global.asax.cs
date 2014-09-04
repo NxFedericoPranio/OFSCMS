@@ -118,7 +118,7 @@ namespace OFSCMS
 
                 }
                 OFSCore.MailManager.MailManager.SMTPAddress = OFSCore.Util.Parameters.MailSMTP;
-                OFSCore.MailManager.MailManager.SendMessage(OFSCore.Util.Parameters.AdminMail, OFSCore.Util.Parameters.AdminMail, "Messaggio dal sito pranio.it di ERRORE", message);
+                OFSCore.MailManager.MailManager.SendMessage(OFSCore.Util.Parameters.AdminMail, OFSCore.Util.Parameters.AdminMail, "Messaggio dal sito di ERRORE", message);
 
                 OFSCore.Util.Log.SaveLog(OFSCore.Folders.BaseFolder + "Log\\" + OFSCore.Util.Log.GetLogFileName() + ".txt", true);
                 // clear error on server

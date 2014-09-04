@@ -12,6 +12,12 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     @Styles.Render("~/Content/themes/base/css")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryui")
+    @Scripts.Render("~/bundles/angular")
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.9.0/ui-bootstrap.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.9.0/ui-bootstrap-tpls.min.js"></script>
+    @Scripts.Render("~/bundles/app")
     <script type="text/javascript">
             var scriptName='@ViewBag.ScriptName';
     </script>
@@ -48,17 +54,12 @@
             </div>
             <div id="footer">
                    
-                <p class="footer">Referente del sito: Federico Pranio</p>
+                <p class="footer">Realizzato da Grillot de Givry</p>
             </div>
         </div>
     </div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/jqueryui")
-    @Scripts.Render("~/bundles/angular")
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.9.0/ui-bootstrap.min.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.9.0/ui-bootstrap-tpls.min.js"></script>
-    @Scripts.Render("~/bundles/app")
+
     @RenderSection("scripts", required: false)
   <script type="text/javascript">
 
@@ -67,7 +68,7 @@
             m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
         })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-      ga('create', 'UA-44055633-1', 'pranio.it');
+      ga('create', '', '');
       ga('send', 'pageview');
 
 </script>

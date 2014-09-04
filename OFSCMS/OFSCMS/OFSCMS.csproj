@@ -171,7 +171,6 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="App_Data\News\00000001it-IT.xml" />
-    <Content Include="App_Data\Orders\00000001.xml" />
     <Content Include="App_Data\Pages\00000001it-IT.xml">
       <SubType>Designer</SubType>
     </Content>
@@ -1048,6 +1047,7 @@
     <Folder Include="App_Data\Gallery\" />
     <Folder Include="App_Data\GuestBook\" />
     <Folder Include="App_Data\Mail\MailAttachments\" />
+    <Folder Include="App_Data\Orders\" />
     <Folder Include="App_Data\Users\" />
     <Folder Include="Areas\Admin\Views\Shared\" />
     <Folder Include="Images\" />

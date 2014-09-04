@@ -21,23 +21,23 @@ namespace OFSMVC.Controllers
         private string seoCheck= "?IsSeoReuqest";
         public ActionResult Index(string id = null)
         {
-            testrenderContoller();            
+            //testrenderContoller();            
             if (id == null) {
                 return Pages();
             }
             else return new RedirectResult(string.Format("../Home/Pages/{0}", id.ToString()));
         }
 
-        private void testrenderContoller()
-        {
-            ViewData["angularApp"] = string.Empty;
-            ViewData["angularView"] = string.Empty;
-            string pathNews = string.Empty;
-            OFSObjects context = new OFSCalendarXml(OFSCore.Folders.CalendarFolder);
-            List<IOFSObject> news = context.GetAll<DataClasses.DataModel.Calendar.OFSEvent>().OrderByDescending(e => ((OFSEvent)e).Date).ToList();
-            string  content = this.ViewToString("../CalendarClient/ListOfEventsMailTemplate", news);
+        //private void testrenderContoller()
+        //{
+        //    ViewData["angularApp"] = string.Empty;
+        //    ViewData["angularView"] = string.Empty;
+        //    string pathNews = string.Empty;
+        //    OFSObjects context = new OFSCalendarXml(OFSCore.Folders.CalendarFolder);
+        //    List<IOFSObject> news = context.GetAll<DataClasses.DataModel.Calendar.OFSEvent>().OrderByDescending(e => ((OFSEvent)e).Date).ToList();
+        //    string  content = this.ViewToString("../CalendarClient/ListOfEventsMailTemplate", news);
 
-        }
+        //}
 
         
 
@@ -51,10 +51,10 @@ namespace OFSMVC.Controllers
                 return null;
             }
 
-            ActionResult view = GetSpecialView(id);
-            ViewBag.IsSubApp = true;
-            if (view != null)
-                return view;
+            //ActionResult view = GetSpecialView(id);
+            //ViewBag.IsSubApp = true;
+            //if (view != null)
+            //    return view;
 
             ViewBag.IsSubApp = false;
 
@@ -67,7 +67,7 @@ namespace OFSMVC.Controllers
             if (id == null)
                 id = "1";
             OFSPage page = GetPage(id);
-            view = ShowPage(page);
+            ActionResult view = ShowPage(page);
             return view;
         }
 
@@ -80,47 +80,47 @@ namespace OFSMVC.Controllers
             }
         }
 
-        public ActionResult GetSpecialView(string id = null)
-        {
-            if (id == null)
-            {
-                return null;
-            }
+        //public ActionResult GetSpecialView(string id = null)
+        //{
+        //    if (id == null)
+        //    {
+        //        return null;
+        //    }
 
 
-            //Case of the photogallery
+        //    //Case of the photogallery
 
-            if (id == "6")
-            {
-                return RedirectToAction("Gallery", "Photo", new { Name = "Io", page = 0 });
-            }
+        //    if (id == "6")
+        //    {
+        //        return RedirectToAction("Gallery", "Photo", new { Name = "Io", page = 0 });
+        //    }
 
-            if (id == "4")
-            {
-                return RedirectToAction("ListOfNews", "NewsClient");
-            }
+        //    if (id == "4")
+        //    {
+        //        return RedirectToAction("ListOfNews", "NewsClient");
+        //    }
 
-            if (id == "5")
-            {
-                return RedirectToAction("ListOfEvents", "CalendarClient");
-            }
+        //    if (id == "5")
+        //    {
+        //        return RedirectToAction("ListOfEvents", "CalendarClient");
+        //    }
 
-            if (id == "15")
-            {
-                return RedirectToAction("SendMail", "MailToUs");
-            }
-            if (id == "17")
-            {
-                return RedirectToAction("Order", "Orders");
-            }
+        //    if (id == "15")
+        //    {
+        //        return RedirectToAction("SendMail", "MailToUs");
+        //    }
+        //    if (id == "17")
+        //    {
+        //        return RedirectToAction("Order", "Orders");
+        //    }
 
-            if (id == "50")
-            {
-                return RedirectToAction("Show", "GuestBook");
-            }
+        //    if (id == "50")
+        //    {
+        //        return RedirectToAction("Show", "GuestBook");
+        //    }
 
-            return null;
-        }
+        //    return null;
+        //}
 
         public OFSPage GetPage(string id)
         {
